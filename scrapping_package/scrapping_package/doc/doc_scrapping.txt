@@ -1,0 +1,5 @@
+Tuto pour les selecteurs xpath/css:
+http://makeseleniumeasy.com/2017/04/28/write-and-validate-xpath-expressions-and-css-selectors-in-chrome-and-firefox-browser/
+
+lxml:
+https://pythonforge.com/la-bibliotheque-lxml/
