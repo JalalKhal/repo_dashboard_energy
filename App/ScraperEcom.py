@@ -46,7 +46,6 @@ class ScraperEcom:
         :param kwargs: keywords parameters
         :return: return contents of urls
         """
-
         pass
 
     def write(self,*args,**kwargs):
