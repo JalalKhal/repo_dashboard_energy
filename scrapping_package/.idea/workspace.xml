@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="73721c35-9446-4c5d-b72b-4727d801fa26" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/scraper/doc_asyncio.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scraper/useragents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/scrapping_package_view.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParserAmazon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/400pages_videogames_urls.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/448articles_videogames_urls.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/45articles_videogames_output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/7570articles_videogames_urls.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/75articles_output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/parse0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/parse1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test_amazon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_cache/output_cache.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_cache/parse0_cache.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_cache/parse1_cache.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output_parse_30pages_videogames.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser/ParserHTML.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/ParserHTML.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scraper/Scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper/Scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subcat_urls.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urls_articles.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2J3KFe5kMVvZJVWy0HEI2g4GeOC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+</project>
