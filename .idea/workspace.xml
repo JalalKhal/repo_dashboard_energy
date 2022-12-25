@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="258a5ce4-6f0b-41f9-b3fa-25c266ae3038" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/App/dash_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/dash_gaz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/repo_dashboards_ecom.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/.idea/scrapping_package.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/App/Untitled.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/dash_gaz.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/dash_gaz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/data_gaz.csv" beforeDir="false" afterPath="$PROJECT_DIR$/App/data_gaz.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
