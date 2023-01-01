@@ -1,0 +1,31 @@
+"MSSQL_SA_PASSWORD=Stackover75" --> password SQL Server
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --name sqlserver  -d --network host  mcr.microsoft.com/mssql/server:2022-latest--> docker container for SQL Server
+docker run -d --rm --name mongodb --network host mongo:latest --> docker container for mongodb
+docker stop sqlserver --> stop the container
+docker start sqlserver -->start the container
+
+difference between run and start: run create the container at the beginnig, start: launch the container after this creation.
+
+Après redémarage serveur, SQL Server conserve les données.
+
+['date', 'region_groups', 'year', 'quarter', 'day', 'month', 'code',
+       'region', 'secte', 'operateur', 'conso', '00_00', '01_00', '02_00',
+       '03_00', '04_00', '05_00', '06_00', '07_00', '08_00', '09_00', '10_00',
+       '11_00', '12_00', '13_00', '14_00', '15_00', '16_00', '17_00', '18_00',
+       '19_00', '20_00', '21_00', '22_00', '23_00']
+
+SQL Server: port 1433
+mongodb: port 27017
+
+
+Import json data to mongodb server:
+mongoimport --db energy_db --collection gaz_energy_tb --file 2021.json
+
+
+
+
+execution scripts bash dans un script bash: source script_bash
+execution scripts python dans un script bash: ./script_python.py
+
+curl "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=courbe-de-charge-eldgrd-regional-grtgaz-terega&q=&rows=10000&sort=date&Facet=date&facet=operateur&facet=region&refine.date=2021">2021.json
