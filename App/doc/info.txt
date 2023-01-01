@@ -1,7 +1,7 @@
 "MSSQL_SA_PASSWORD=Stackover75" --> password SQL Server
 
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --name sqlserver  -d --network host  mcr.microsoft.com/mssql/server:2022-latest--> docker container for SQL Server
-docker run -d --rm --name mongodb --network host mongo:latest --> docker container for mongodb
+docker run -d --name mongodb --network host mongo:latest --> docker container for mongodb
 docker stop sqlserver --> stop the container
 docker start sqlserver -->start the container
 

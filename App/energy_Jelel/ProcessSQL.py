@@ -6,10 +6,11 @@ from sqlalchemy import inspect
 
 
 class ProcessSQL:
+    database_name="energy_dbs"
     #connection to the SQL Server in docker container
     params=urllib.parse.quote_plus('Driver={ODBC Driver 18 for SQL Server};'
                                    'Server=localhost;'
-                                   'Database=energy_dbs;'
+                                   f"Database={database_name};"
                                    "UID=sa;"
                                    "PWD=Stackover75;"
                                    'Trusted_Connection=no;'
@@ -41,7 +42,7 @@ class ProcessSQL:
 
     def push_sqlserver(self):
         df=self.process_data()
-        df_inserver=pd.read_sql("SELECT * FROM dbo.gaz_energy_tbs",con=ProcessSQL.engine)
+        df_inserver=pd.read_sql(f"SELECT * FROM dbo.{self.table_name}",con=ProcessSQL.engine)
         if not inspect(ProcessSQL.engine).has_table(self.table_name):
             df.loc[self.get_mask(df,df_inserver)].to_sql(self.table_name,con=ProcessSQL.engine,\
                                                                if_exists="replace",index=False)
