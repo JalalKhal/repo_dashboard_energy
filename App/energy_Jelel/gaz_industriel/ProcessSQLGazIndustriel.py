@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, "../../../../") #insert repo_dashboards_ecom to PYTHONPATH
+#sys.path.insert(0, "../../../../") #insert repo_dashboards_ecom to PYTHONPATH
 from App.energy_Jelel.ProcessSQL import ProcessSQL
 import json
 import pandas as pd
@@ -19,7 +19,11 @@ class ProcessSQLGazIndustriel(ProcessSQL):
         data_json_str=self.data_json_str
         data_json=json.loads(data_json_str)
         records=data_json["records"]
-        dict_rec=records[0]
+        try:
+            dict_rec=records[0]
+        except IndexError:
+            print("Aucun enregistrements trouvés à cette date !")
+            exit(0)
         features=list(dict_rec["fields"].keys())
         # Construct a list of dictionaries, each containing the feature-value pairs for a record
         records=[{feature:value for feature,value in \
@@ -37,6 +41,9 @@ class ProcessSQLGazIndustriel(ProcessSQL):
         df["day"]=df["date"].dt.day
         df["quarter"]=df["date"].dt.quarter
         df["year"]=df["date"].dt.year
+        for column_int in df.columns[3:]:
+            df[column_int]=pd.to_numeric(df[column_int], errors='coerce')#transform non numeric value to NaN
+        df=df.dropna()
         return df
 
     def get_mask(self,df,df_inserver):

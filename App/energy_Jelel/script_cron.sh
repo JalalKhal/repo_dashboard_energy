@@ -1,0 +1,6 @@
+#!/bin/bash
+year_mnth=$(date +%Y-%m)
+cd ./gaz
+source ./script_mongo_get_gaz.sh $year_mnth
+cd ../gaz_industriel
+source ./script_mongo_get_gaz_industriel.sh $year_mnth

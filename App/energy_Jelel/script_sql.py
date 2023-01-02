@@ -15,7 +15,14 @@ ProcessSQLEnergy= getattr(module,sys.argv[2])
 client=MongoClient()
 db=client[sys.argv[3]]
 cursor=db[sys.argv[4]].find().sort("_id",-1).limit(1)
-data_json_str=dumps(list(cursor)[0])
-ProcessSQLEnergy(data_json_str).push_sqlserver()
+data_json_str = dumps(list(cursor)[0])
+try:
+    ProcessSQLEnergy(data_json_str).push_sqlserver()
+    db[sys.argv[4]].delete_one({})
+except Exception as e:
+    print(f"Exit program: Exception {e}")
+    exit(1)
+
+
 
 

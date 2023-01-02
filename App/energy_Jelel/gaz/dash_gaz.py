@@ -1,7 +1,8 @@
-from dash import Dash, dcc, html, Input, Output
+import pandas as pd
+from dash import Dash, dcc, html, Input, Output,dash_table
 import plotly.express as px
 import sys
-sys.path.insert(0, "../../../../") #insert repo_dashboards_ecom to PYTHONPATH
+#sys.path.insert(0, "../../../../") #insert repo_dashboards_ecom to PYTHONPATH
 from App.energy_Jelel.gaz.ProcessSQLGaz import ProcessSQLGaz
 # Define a list of French month names
 months_fr = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
@@ -20,7 +21,16 @@ df=ProcessSQLGaz().get_sqlserver() #get SQL data from SQL Server
 app = Dash(__name__)
 # Define the layout of the app
 app.layout = html.Div([
-    html.H1("Consommation de Gaz en France",style={"color":"#DC143C"}),
+    html.H1("Consommation de Gaz des ménages en France",style={"color":"#DC143C"}),
+    html.Div(
+        dash_table.DataTable(id="table",data=df.to_dict('records'),columns=[{"name": i, "id": i} for i in df.columns]),
+        style={"display":"none"},
+    ),
+    dcc.Interval(
+        id='interval-component',
+        interval=60*1000, # in milliseconds
+        n_intervals=0,
+    ),
     html.Div(children=[
     html.P("Selectionnez l'horaire de consommation:"),
     dcc.Dropdown(
@@ -65,11 +75,20 @@ app.layout = html.Div([
 ],
 )
 
+@app.callback(
+    Output("table","data"),
+    Input("interval-component","n_intervals")
+)
+def update_table(n):
+    return ProcessSQLGaz().get_sqlserver().to_dict(orient='records')#get SQL data from SQL Server
 # Define the callback function for the area plot
 @app.callback(
     Output("graph_line", "figure"),
-    Input("hours-axis_line", "value"))
-def display_graph_line(hour):
+    Input("hours-axis_line", "value"),
+    Input("table","data"),
+)
+def display_graph_line(hour,df_json):
+    df=pd.DataFrame.from_dict(df_json)
     # If the "Toutes horaires" option was selected, set the feature to "conso"
     if hour=="Toutes horaires":
         feature="conso"
@@ -79,7 +98,7 @@ def display_graph_line(hour):
     # Aggregate the data by date and regions group
     df_agg = df.groupby(['date', 'region_groups'])[['conso']+[f"{g(i)}_00" for i in range(24)]].mean().reset_index()
     # Create the area plot
-    fig = px.area(df_agg, x="date", y=feature, color="region_groups", line_group="region_groups",\
+    fig = px.scatter(df_agg, x="date", y=feature, color="region_groups",\
         color_discrete_map={0:"#9400D3",1:"#1E90FF",2:"#FFFFF0",3:"#FF4500"},\
         labels={feature:"Consommation à "+hour,"region_groups":"Groupe de régions"})\
     .update_layout(
@@ -91,8 +110,11 @@ def display_graph_line(hour):
 @app.callback(
     Output("graph_chart", "figure"),
     Input("hours-axis_chart", "value"),
-    Input("period-axis_chart", "value"),)
-def display_graph_chart(hour,period):
+    Input("period-axis_chart", "value"),
+    Input("table","data"),
+)
+def display_graph_chart(hour,period,df_json):
+    df=pd.DataFrame.from_dict(df_json)
     # Convert the period to the corresponding column and labels in French
     conv_fr={"Trimestre":(list(range(1,5)),quarters_fr),"Mois":(list(range(1,13)),months_fr)}
     period_conv={"Année":"year","Trimestre":"quarter","Mois":"month"}[period]
@@ -121,8 +143,11 @@ def display_graph_chart(hour,period):
 # Define the callback function for the histogram
 @app.callback(
     Output("graph_hist", "figure"),
-    Input("hours-axis_hist", "value"))
-def display_graph_hist(hour):
+    Input("hours-axis_hist", "value"),
+    Input("table","data"),
+)
+def display_graph_hist(hour,df_json):
+    df=pd.DataFrame.from_dict(df_json)
     # If the "Toutes horaires" option was selected, set the feature to "conso"
     if hour=="Toutes horaires":
         feature="conso"
@@ -140,4 +165,4 @@ def display_graph_hist(hour):
     return fig
 
 # Run the app
-app.run_server(debug=True)
+app.run_server(debug=True,port=8053)
