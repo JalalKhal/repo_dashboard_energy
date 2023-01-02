@@ -1,5 +1,3 @@
-import sys
-#sys.path.insert(0, "../../../../") #insert repo_dashboards_ecom to PYTHONPATH
 from App.energies.ProcessSQL import ProcessSQL
 import json
 import pandas as pd

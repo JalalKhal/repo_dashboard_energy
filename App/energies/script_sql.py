@@ -1,4 +1,4 @@
-#! /home/khaldi/anaconda3/envs/energies_env/bin/python
+#!/usr/bin/env python3
 from pymongo import MongoClient
 from bson.json_util import dumps
 import importlib
@@ -9,7 +9,6 @@ sys.argv[2]: ProcessSQLEnergy (exemple:Energy=Gaz)
 sys.argv[3]: mongo database name
 sys.argv[4]: mongo collection name
 """
-#sys.path.insert(0, "../../../") #insert repo_dashboards_ecom to PYTHONPATH
 module = importlib.import_module(sys.argv[1])
 ProcessSQLEnergy= getattr(module,sys.argv[2])
 client=MongoClient()

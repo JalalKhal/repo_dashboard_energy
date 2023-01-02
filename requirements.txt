@@ -1,0 +1,6 @@
+dash==2.7.1
+pandas==1.4.4
+plotly==5.9.0
+pymongo==4.3.3
+SQLAlchemy==1.4.39
+validators==0.20.0

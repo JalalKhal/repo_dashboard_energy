@@ -34,12 +34,19 @@ def update_table(n):
 def display_line_chart(df_json):
     df=pd.DataFrame.from_dict(df_json).sort_values(by="annee")
     consumption_values=df.groupby("annee")["consototale"].sum()
-    return px.line(df,x=df["annee"].unique(),y=consumption_values,markers=True,\
-                   title='Consommation totale d\'énergie (Gaz et Électricité) par année')\
+    try:
+        fig=px.line(df,x=df["annee"].unique(),y=consumption_values,markers=True, \
+                    title='Consommation totale d\'énergie (Gaz et Électricité) par année') \
             .update_layout(
-                xaxis_title="Année",yaxis_title="Consommation totale (somme) de Gaz et Électricité (en MWh)")\
+            xaxis_title="Année",yaxis_title="Consommation totale (somme) de Gaz et Électricité (en MWh)") \
             .update_traces(line=dict(color="#72A0C1"))
-
+    except:
+        fig=px.line(df,x=df["annee"].unique(),y=consumption_values,markers=True, \
+                    title='Consommation totale d\'énergie (Gaz et Électricité) par année') \
+            .update_layout(
+            xaxis_title="Année",yaxis_title="Consommation totale (somme) de Gaz et Électricité (en MWh)") \
+            .update_traces(line=dict(color="#72A0C1"))
+    return fig
 
 
 # Run the app

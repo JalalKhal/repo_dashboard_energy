@@ -1,9 +1,8 @@
 import pandas as pd
 from dash import Dash, dcc, html, Input, Output,dash_table
 import plotly.express as px
-import sys
-#sys.path.insert(0, "../../../../") #insert repo_dashboards_ecom to PYTHONPATH
 from App.energies.gaz.ProcessSQLGaz import ProcessSQLGaz
+
 # Define a list of French month names
 months_fr = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 # Define a list of French quarter names
