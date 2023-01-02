@@ -13,7 +13,7 @@ app.layout = html.Div(children=[
     ),
     dcc.Interval(
         id='interval-component',
-        interval=60*1000, # in milliseconds
+        interval=600*1000, # in milliseconds
         n_intervals=0,
     ),
     dcc.Graph(id='graph_line_chart'),

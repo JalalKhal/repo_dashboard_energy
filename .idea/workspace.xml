@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="258a5ce4-6f0b-41f9-b3fa-25c266ae3038" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/App/energies/tmp/gaz_industriel_tmp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/energy_dbs.fmFXVw/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/energy_dbs.fmFXVw/schema/dbo.sYMBAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/energies/ProcessSQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/ProcessSQL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/energies/dash_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/dash_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/energies/gaz/dash_gaz.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz/dash_gaz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/energies/gaz_elec/dash_gaz_elec.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz_elec/dash_gaz_elec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/energies/gaz_industriel/dash_gaz_industriel.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz_industriel/dash_gaz_industriel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/energies/script_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/script_sql.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/init.sh" beforeDir="false" afterPath="$PROJECT_DIR$/App/init.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

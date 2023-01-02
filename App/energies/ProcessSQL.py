@@ -3,8 +3,6 @@ import urllib
 from sqlalchemy import create_engine
 from sqlalchemy import inspect
 
-
-
 class ProcessSQL:
     database_name="energy_dbs"
     #connection to the SQL Server in docker container

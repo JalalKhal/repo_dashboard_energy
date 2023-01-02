@@ -20,7 +20,3 @@ try:
 except Exception as e:
     print(f"Exit program: Exception {e}")
     exit(1)
-
-
-
-

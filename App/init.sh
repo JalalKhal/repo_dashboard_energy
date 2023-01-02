@@ -1,11 +1,28 @@
 #!/bin/bash
 #run script in sudo mode
+apt-get install curl
+apt update
+apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+apt-cache policy docker-ce
+apt install docker-ce
+apt-get install odbcinst
+curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+echo "deb [arch=amd64] https://packages.microsoft.com/ubuntu/21.10/prod impish main" | tee /etc/apt/sources.list.d/mssql-release.list
+apt update
+apt install msodbcsql18
+
+
+
+"""
+
 apt-get install python3-pip
 pip3 install -r ./requirements.txt
 
 apt-get install odbcinst
-sudo curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-echo "deb [arch=amd64] https://packages.microsoft.com/ubuntu/21.10/prod impish main" | sudo tee /etc/apt/sources.list.d/mssql-release.list
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+echo 'deb [arch=amd64] https://packages.microsoft.com/ubuntu/21.10/prod impish main' | sudo tee /etc/apt/sources.list.d/mssql-release.list
 apt update
 apt install msodbcsql18
 
@@ -19,6 +36,7 @@ echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 source ~/.bashrc
 
+"""
 
 cd ../
 export PYTHONPATH=$PYTHONPATH:$(pwd)

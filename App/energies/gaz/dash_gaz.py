@@ -27,7 +27,7 @@ app.layout = html.Div([
     ),
     dcc.Interval(
         id='interval-component',
-        interval=60*1000, # in milliseconds
+        interval=600*1000, # in milliseconds
         n_intervals=0,
     ),
     html.Div(children=[
