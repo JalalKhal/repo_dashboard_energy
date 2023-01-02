@@ -28,4 +28,8 @@ mongoimport --db energy_db --collection gaz_energy_tb --file 2021.json
 execution scripts bash dans un script bash: source script_bash
 execution scripts python dans un script bash: ./script_python.py
 
+
+
+conda env create -n energies_env --file energies_env.yml --> import conda env
+
 curl "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=courbe-de-charge-eldgrd-regional-grtgaz-terega&q=&rows=10000&sort=date&Facet=date&facet=operateur&facet=region&refine.date=2021">2021.json
