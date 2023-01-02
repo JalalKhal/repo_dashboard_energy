@@ -9,14 +9,15 @@ echo "deb [arch=amd64] https://packages.microsoft.com/ubuntu/21.10/prod impish m
 apt update
 apt install msodbcsql18
 
-curl https://packages.microsoft.com/config/rhel/8/prod.repo > /etc/yum.repos.d/msprod.repo
-yum remove mssql-tools unixODBC-utf16-devel
-yum install mssql-tools unixODBC-devel
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -yum remove mssql-tools unixODBC-utf16-devel
+curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.listecho 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+apt-get update
+apt-get install mssql-tools unixodbc-dev
+apt-get update
+apt-get install mssql-tools
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 source ~/.bashrc
-sqlcmd -S localhost -U SA -P 'Stackover75' -Q "CREATE DATABASE energy_dbs"
-
 
 
 cd ../
@@ -27,8 +28,7 @@ docker run -d --name mongodb --network host mongo:latest #docker container for m
 docker cp ./init_mongo.js mongodb:/tmp/init_mongo.js
 docker exec -it mongodb mongosh --file /tmp/init_mongo.js
 
-# Run the sqlcmd utility in the sqlserver container
-docker exec -it sqlserver sqlcmd -U SA -P "Stackover75" -Q "CREATE DATABASE test"
+sqlcmd -S localhost -U SA -P 'Stackover75' -Q "CREATE DATABASE energy_dbs"
 
 
 cd ./energies

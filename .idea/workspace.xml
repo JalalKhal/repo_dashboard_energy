@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="258a5ce4-6f0b-41f9-b3fa-25c266ae3038" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mssql-docker" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/energy_dbs.fmFXVw/schema/db.fgwAAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/energy_dbs.fmFXVw/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/energy_dbs.fmFXVw/schema/dbo.sYMBAA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c4e04e4-9887-4a6b-aea1-0bb1b5db9e86.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c4e04e4-9887-4a6b-aea1-0bb1b5db9e86.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/repo_dashboards_energy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/repo_dashboards_energy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energies/tmp/gaz_tmp.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/App/init.sh" beforeDir="false" afterPath="$PROJECT_DIR$/App/init.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/App/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mssql-docker/linux/preview/examples/mssql-customize/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mssql-docker/linux/preview/examples/mssql-customize/setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/doc/doc_scrapping.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/parser/ParserHTML.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/parser/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/scraper/Scraper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/scraper/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/scraper/doc_asyncio.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapping_package/scraper/useragents.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
