@@ -1,3 +1,3 @@
 #!/bin/bash
-source /home/khaldi/anaconda3/bin/activate energies_env
+source ~/anaconda3/bin/activate energies_env
 ./../script_sql.py "App.energies.gaz_industriel.ProcessSQLGazIndustriel" "ProcessSQLGazIndustriel" "energy_db" "gaz_industriel_energy_tb"
