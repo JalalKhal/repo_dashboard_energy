@@ -1,4 +1,4 @@
-#! /home/khaldi/anaconda3/envs/repo_dashboards_ecom/bin/python
+#! /home/khaldi/anaconda3/envs/energies_env/bin/python
 from pymongo import MongoClient
 from bson.json_util import dumps
 import importlib

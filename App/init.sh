@@ -1,5 +1,7 @@
 #!/bin/bash
 #run script in sudo mode
+
+source /home/khaldi/anaconda3/bin/activate energies_env
 #docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --name sqlserver  -d --network host  mcr.microsoft.com/mssql/server:2022-latest #docker container for SQL Server
 #docker run -d --name mongodb --network host mongo:latest #docker container for mongodb
 docker cp ./init_mongo.js mongodb:/tmp/init_mongo.js

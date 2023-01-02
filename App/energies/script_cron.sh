@@ -1,4 +1,5 @@
 #!/bin/bash
+source /home/khaldi/anaconda3/bin/activate energies_env
 year_mnth=$(date +%Y-%m)
 cd ./gaz
 source ./script_mongo_get_gaz.sh $year_mnth

@@ -4,6 +4,7 @@
 #$2 name of mongo DataBase
 #$3 name of the collection of mongo DataBase
 #$4 url of http request
+source /home/khaldi/anaconda3/bin/activate energies_env
 curl --http1.1 $4 -o ../tmp/$1
 docker cp ../tmp/$1 mongodb:/tmp/$1
 docker exec mongodb mongoimport --db $2 --collection $3 --file /tmp/$1
