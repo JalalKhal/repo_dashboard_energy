@@ -1,1 +1,0 @@
-{"nhits": 0, "parameters": {"dataset": "courbe-de-charge-eldgrd-regional-grtgaz-terega", "rows": 10000, "start": 0, "sort": ["date"], "facet": ["operateur", "region"], "refine": {"date": "2012"}, "format": "json", "timezone": "UTC"}, "records": []}

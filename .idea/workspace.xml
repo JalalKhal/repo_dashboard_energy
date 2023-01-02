@@ -5,29 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="258a5ce4-6f0b-41f9-b3fa-25c266ae3038" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/App/energies/gaz_elec/ProcessSQLGazElec.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/energies/gaz_elec/dash_gaz_elec.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/energies/gaz_elec/script_mongo_get_gaz_elec.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/energies/gaz_elec/script_push_sql.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssql-docker" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/energy_dbs.fmFXVw/schema/db.fgwAAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/energy_dbs.fmFXVw/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/energy_dbs.fmFXVw/schema/dbo.sYMBAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/21e664f5-8582-4ec0-adbb-5b2d2e1ccf17/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c4e04e4-9887-4a6b-aea1-0bb1b5db9e86.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c4e04e4-9887-4a6b-aea1-0bb1b5db9e86.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/repo_dashboards_energy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/repo_dashboards_energy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/ProcessSQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/ProcessSQL.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/Untitled.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/gaz/ProcessSQLGaz.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz/ProcessSQLGaz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/gaz/dash_gaz.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz/dash_gaz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/gaz/script_mongo_get_gaz.sh" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz/script_mongo_get_gaz.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/gaz/script_push_sql.sh" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz/script_push_sql.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/gaz_industriel/ProcessSQLGazIndustriel.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz_industriel/ProcessSQLGazIndustriel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/gaz_industriel/dash_gaz_industriel.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz_industriel/dash_gaz_industriel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/gaz_industriel/script_mongo_get_gaz_industriel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz_industriel/script_mongo_get_gaz_industriel.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/gaz_industriel/script_push_sql.sh" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/gaz_industriel/script_push_sql.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/script_cron.sh" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/script_cron.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/script_mongo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/script_mongo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/energy_Jelel/script_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/energies/script_sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autre_traitement/conso_annuel_energie/Assets/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/autre_traitement/conso_annuel_energie/Assets/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/energies/tmp/gaz_tmp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/init.sh" beforeDir="false" afterPath="$PROJECT_DIR$/App/init.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/App/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mssql-docker/linux/preview/examples/mssql-customize/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mssql-docker/linux/preview/examples/mssql-customize/setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapping_package/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapping_package/doc/doc_scrapping.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapping_package/parser/ParserHTML.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapping_package/parser/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapping_package/scraper/Scraper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapping_package/scraper/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapping_package/scraper/doc_asyncio.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapping_package/scraper/useragents.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,33 +56,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ToolWindowPython Console.ShowToolbar": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/khaldi/Documents/repo_dashboards_energy/App/energy_Jelel",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ToolWindowPython Console.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/khaldi/Documents/repo_dashboards_energy/App&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "sqlserver",
-      "mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;sqlserver&quot;,
+      &quot;mongo&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/App" />
       <recent name="$PROJECT_DIR$/App/energy_Jelel" />
       <recent name="$PROJECT_DIR$/App/energy_Jelel/gaz_industriel" />
       <recent name="$PROJECT_DIR$/App/energy_Jelel/gaz" />

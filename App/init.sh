@@ -1,6 +1,24 @@
 #!/bin/bash
 #run script in sudo mode
+apt-get install python3-pip
 pip3 install -r ./requirements.txt
+
+apt-get install odbcinst
+sudo curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+echo "deb [arch=amd64] https://packages.microsoft.com/ubuntu/21.10/prod impish main" | sudo tee /etc/apt/sources.list.d/mssql-release.list
+apt update
+apt install msodbcsql18
+
+curl https://packages.microsoft.com/config/rhel/8/prod.repo > /etc/yum.repos.d/msprod.repo
+yum remove mssql-tools unixODBC-utf16-devel
+yum install mssql-tools unixODBC-devel
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+source ~/.bashrc
+sqlcmd -S localhost -U SA -P 'Stackover75' -Q "CREATE DATABASE energy_dbs"
+
+
+
 cd ../
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 cd ./App
@@ -8,6 +26,10 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --
 docker run -d --name mongodb --network host mongo:latest #docker container for mongodb
 docker cp ./init_mongo.js mongodb:/tmp/init_mongo.js
 docker exec -it mongodb mongosh --file /tmp/init_mongo.js
+
+# Run the sqlcmd utility in the sqlserver container
+docker exec -it sqlserver sqlcmd -U SA -P "Stackover75" -Q "CREATE DATABASE test"
+
 
 cd ./energies
 
