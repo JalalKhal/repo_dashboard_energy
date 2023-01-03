@@ -1,27 +1,38 @@
 #!/bin/bash
-#run script in sudo mode
 
-apt-get install curl
-apt update
-apt install apt-transport-https ca-certificates curl software-properties-common
+# ************************************************************
+# This script will allow you install all dependency you've need
+# Especially Panda, Docker image,
+# ***********************************************************
+
+# !!! run script in sudo mode
+
+a="which python3"
+echo $(eval "$a")
+
+mkdir ./energies/tmp
+
+apt-get --yes install curl
+apt --yes update
+apt --yes install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-apt-cache policy docker-ce
-apt install docker-ce
+add-apt-repository --yes "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+apt-cache --yes policy docker-ce
+apt --yes install docker-ce
 
-apt-get install odbcinst
+apt-get --yes install odbcinst
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 echo "deb [arch=amd64] https://packages.microsoft.com/ubuntu/21.10/prod impish main" | tee /etc/apt/sources.list.d/mssql-release.list
-apt update
+apt --yes update
 
-apt install msodbcsql18
+apt --yes install msodbcsql18
 
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -yum remove mssql-tools unixODBC-utf16-devel
 curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.listecho 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
-apt-get update
-apt-get install mssql-tools unixodbc-dev
-apt-get update
-apt-get install mssql-tools
+apt-get --yes update
+apt-get --yes install mssql-tools unixodbc-dev
+apt-get --yes update
+apt-get --yes install mssql-tools
 #echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
 #echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 #source ~/.bashrc
@@ -29,10 +40,8 @@ apt-get install mssql-tools
 
 
 
-apt install python3-pip
-pip3 install -r ./requirements.txt
-
-
+apt --yes install python3-pip
+python3 -m pip install -r ./requirements.txt
 
 
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --name sqlserver  -d --network host  mcr.microsoft.com/mssql/server:2022-latest #docker container for SQL Server

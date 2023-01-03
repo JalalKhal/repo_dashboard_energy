@@ -1,13 +1,15 @@
-from dash import Dash, html, dcc, dash_table, Output, Input
-from App.energies.gaz_elec.ProcessSQLGazElec import ProcessSQLGazElec
-import pandas as pd
-import plotly.express as px
 import os
 import sys
 
 absolute_path = os.path.dirname(__file__)
 relative_path="../../"
 sys.path.append(os.path.join(absolute_path, relative_path))
+
+from dash import Dash, html, dcc, dash_table, Output, Input
+from App.energies.gaz_elec.ProcessSQLGazElec import ProcessSQLGazElec
+import pandas as pd
+import plotly.express as px
+
 df=ProcessSQLGazElec().get_sqlserver() #get SQL data from SQL Server
 app =Dash()
 app.layout = html.Div(children=[

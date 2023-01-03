@@ -1,11 +1,16 @@
+import os
+import sys
+
+absolute_path = os.path.dirname(__file__)
+relative_path="../../"
+sys.path.append(os.path.join(absolute_path, relative_path))
+
 import pandas as pd
 from dash import Dash, dcc, html, Input, Output,dash_table
 import plotly.express as px
 from App.energies.gaz.ProcessSQLGaz import ProcessSQLGaz
 from App.energies.gaz_elec.ProcessSQLGazElec import ProcessSQLGazElec
 from App.energies.gaz_industriel.ProcessSQLGazIndustriel import ProcessSQLGazIndustriel
-import os
-import sys
 
 absolute_path = os.path.dirname(__file__)
 relative_path="../../"

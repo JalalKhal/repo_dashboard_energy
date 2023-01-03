@@ -1,3 +1,3 @@
 #!/bin/bash
-a="which pip"
+a="which python3"
 echo $(eval "$a")
