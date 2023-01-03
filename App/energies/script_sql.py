@@ -3,6 +3,10 @@ from pymongo import MongoClient
 from bson.json_util import dumps
 import importlib
 import sys
+import os
+absolute_path = os.path.dirname(__file__)
+relative_path="../../"
+sys.path.append(os.path.join(absolute_path, relative_path))
 """
 sys.argv[1]: relative path (root:./repo_dashboards_ecom) of class ProcessSQLEnergy (exemple:App.energies.gaz.ProcessSQLGaz
 sys.argv[2]: ProcessSQLEnergy (exemple:Energy=Gaz)

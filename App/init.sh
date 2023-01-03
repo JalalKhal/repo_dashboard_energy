@@ -38,6 +38,7 @@ pip3 install -r ./requirements.txt
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --name sqlserver  -d --network host  mcr.microsoft.com/mssql/server:2022-latest #docker container for SQL Server
 docker run -d --name mongodb --network host mongo:latest #docker container for mongodb
 sleep 5
+
 docker cp ./init_mongo.js mongodb:/tmp/init_mongo.js
 docker exec -it mongodb mongosh --file /tmp/init_mongo.js
 
