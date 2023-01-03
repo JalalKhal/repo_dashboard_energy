@@ -13,6 +13,7 @@ apt-get install odbcinst
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 echo "deb [arch=amd64] https://packages.microsoft.com/ubuntu/21.10/prod impish main" | tee /etc/apt/sources.list.d/mssql-release.list
 apt update
+
 apt install msodbcsql18
 
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -yum remove mssql-tools unixODBC-utf16-devel
@@ -25,16 +26,15 @@ apt-get install mssql-tools
 #echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 #source ~/.bashrc
 
-apt-get install python-pip
-pip install -r ./requirements.txt
 
 
-apt-get install python-pip
-pip install -r ./requirements.txt
-export PYTHONPATH=$PYTHONPATH:$(pwd)
 
-cd ../
-cd ./App
+apt install python3-pip
+pip3 install -r ./requirements.txt
+
+
+
+
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --name sqlserver  -d --network host  mcr.microsoft.com/mssql/server:2022-latest #docker container for SQL Server
 docker run -d --name mongodb --network host mongo:latest #docker container for mongodb
 sleep 5
@@ -56,13 +56,11 @@ while [ $status -ne 0 ];
         sleep 1
     done
 
-
-
 cd ./energies
 
 cd ./gaz
 
-for i in {2011..2012}
+for i in {2011..2023}
   do
     source ./script_mongo_get_gaz.sh $i
     cd ../gaz_industriel
@@ -71,6 +69,7 @@ for i in {2011..2012}
     source ./script_mongo_get_gaz_elec.sh $i
     cd ../gaz
   done
+
 
 
 
