@@ -1,5 +1,6 @@
 #!/bin/bash
 #run script in sudo mode
+
 apt-get install curl
 apt update
 apt install apt-transport-https ca-certificates curl software-properties-common
@@ -20,43 +21,28 @@ apt-get update
 apt-get install mssql-tools unixodbc-dev
 apt-get update
 apt-get install mssql-tools
-echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
-echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
-source ~/.bashrc
-
-
-"""
+#echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+#echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+#source ~/.bashrc
 
 apt-get install python-pip
 pip install -r ./requirements.txt
 
-apt-get install odbcinst
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-echo 'deb [arch=amd64] https://packages.microsoft.com/ubuntu/21.10/prod impish main' | sudo tee /etc/apt/sources.list.d/mssql-release.list
-apt update
-apt install msodbcsql18
 
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -yum remove mssql-tools unixODBC-utf16-devel
-curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.listecho 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
-apt-get update
-apt-get install mssql-tools unixodbc-dev
-apt-get update
-apt-get install mssql-tools
-echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
-echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
-source ~/.bashrc
-
-"""
+apt-get install python-pip
+pip install -r ./requirements.txt
+export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 cd ../
-export PYTHONPATH=$PYTHONPATH:$(pwd)
 cd ./App
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --name sqlserver  -d --network host  mcr.microsoft.com/mssql/server:2022-latest #docker container for SQL Server
 docker run -d --name mongodb --network host mongo:latest #docker container for mongodb
 sleep 5
 docker cp ./init_mongo.js mongodb:/tmp/init_mongo.js
 docker exec -it mongodb mongosh --file /tmp/init_mongo.js
-x="sqlcmd -S localhost -U SA -P 'Stackover75' -Q 'CREATE DATABASE energy_dbs'"
+
+
+x="/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'Stackover75' -Q 'CREATE DATABASE energy_dbs'"
 status=$?
 y=$(eval "$x")
 status=$?
@@ -75,7 +61,7 @@ while [ $status -ne 0 ];
 cd ./energies
 
 cd ./gaz
-"""
+
 for i in {2011..2012}
   do
     source ./script_mongo_get_gaz.sh $i
@@ -85,7 +71,7 @@ for i in {2011..2012}
     source ./script_mongo_get_gaz_elec.sh $i
     cd ../gaz
   done
-"""
+
 
 
 
