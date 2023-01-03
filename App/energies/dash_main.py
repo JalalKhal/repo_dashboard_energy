@@ -4,9 +4,12 @@ import plotly.express as px
 from App.energies.gaz.ProcessSQLGaz import ProcessSQLGaz
 from App.energies.gaz_elec.ProcessSQLGazElec import ProcessSQLGazElec
 from App.energies.gaz_industriel.ProcessSQLGazIndustriel import ProcessSQLGazIndustriel
+import os
+import sys
 
-
-
+absolute_path = os.path.dirname(__file__)
+relative_path="../../"
+sys.path.append(os.path.join(absolute_path, relative_path))
 # Define a list of French month names
 months_fr = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 # Define a list of French quarter names
