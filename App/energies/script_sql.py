@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 from pymongo import MongoClient
 from bson.json_util import dumps
 import importlib
