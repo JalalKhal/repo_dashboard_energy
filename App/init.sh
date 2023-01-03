@@ -6,10 +6,17 @@
 # ***********************************************************
 
 # !!! run script in sudo mode
+chmod +x run_app.sh						#scripts bash
+chmod +x ./energies/script_cron.sh
+chmod +x ./energies/script_mongo.sh
+chmod +x ./energies/gaz/script_mongo_get_gaz.sh
+chmod +x ./energies/gaz/script_push_sql.sh
+chmod +x ./energies/gaz_elec/script_mongo_get_gaz_elec.sh
+chmod +x ./energies/gaz_elec/script_push_sql.sh
+chmod +x ./energies/gaz_industriel/script_mongo_get_gaz_industriel.sh
+chmod +x ./energies/gaz_industriel/script_push_sql.sh
 
-a="which python3"
-echo $(eval "$a")
-
+chmod +x ./energies/script_sql.py #script python
 mkdir ./energies/tmp
 
 apt-get --yes install curl
@@ -33,9 +40,6 @@ apt-get --yes update
 apt-get --yes install mssql-tools unixodbc-dev
 apt-get --yes update
 apt-get --yes install mssql-tools
-#echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
-#echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
-#source ~/.bashrc
 
 
 
@@ -46,24 +50,35 @@ python3 -m pip install -r ./requirements.txt
 
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --name sqlserver  -d --network host  mcr.microsoft.com/mssql/server:2022-latest #docker container for SQL Server
 docker run -d --name mongodb --network host mongo:latest #docker container for mongodb
-sleep 5
+sleep 181 # time to load containers
 
-docker cp ./init_mongo.js mongodb:/tmp/init_mongo.js
+x="docker cp ./init_mongo.js mongodb:/tmp/init_mongo.js"
+status=$?
+y=$(eval "$x")
+status=$?
+
+echo $y
+# Check the status code of command
+while [ $status -ne 0 ];
+    do
+        y=$(eval "$x")
+        status=$?
+        sleep 3
+    done
+
 docker exec -it mongodb mongosh --file /tmp/init_mongo.js
-
 
 x="/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'Stackover75' -Q 'CREATE DATABASE energy_dbs'"
 status=$?
 y=$(eval "$x")
 status=$?
-
 echo $y
 # Check the status code of sqlcmd command
 while [ $status -ne 0 ];
     do
         y=$(eval "$x")
         status=$?
-        sleep 1
+        sleep 3
     done
 
 cd ./energies

@@ -342,5 +342,5 @@ def display_graph_chart(hour,period,df_json):
         fig.update_xaxes(tickvals=conv_fr[period][0], ticktext=conv_fr[period][1])
     return fig
 
-app.run_server(debug=True,port=8051)
+app.run_server(debug=False,host="0.0.0.0",port=8051)
 
