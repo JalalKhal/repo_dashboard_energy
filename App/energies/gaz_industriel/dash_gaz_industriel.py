@@ -3,7 +3,7 @@ import os
 import sys
 
 absolute_path = os.path.dirname(__file__)
-relative_path="../../"
+relative_path="../../../"
 sys.path.append(os.path.join(absolute_path, relative_path))
 
 from dash import Dash, dcc, html, Input, Output,dash_table
@@ -137,4 +137,4 @@ def display_graph_chart(hour,period,df_json):
     return fig
 
 # Run the app
-app.run_server(debug=True,port=8051)
+app.run_server(debug=True,port=8053)

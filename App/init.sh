@@ -15,6 +15,8 @@ chmod +x ./energies/gaz_elec/script_mongo_get_gaz_elec.sh
 chmod +x ./energies/gaz_elec/script_push_sql.sh
 chmod +x ./energies/gaz_industriel/script_mongo_get_gaz_industriel.sh
 chmod +x ./energies/gaz_industriel/script_push_sql.sh
+chmod +x ./energies/elec_day/script_mongo_get_elec_day.sh
+chmod +x ./energies/elec_day/script_push_sql.sh
 
 chmod +x ./energies/script_sql.py #script python
 mkdir ./energies/tmp
@@ -50,7 +52,7 @@ python3 -m pip install -r ./requirements.txt
 
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --name sqlserver  -d --network host  mcr.microsoft.com/mssql/server:2022-latest #docker container for SQL Server
 docker run -d --name mongodb --network host mongo:latest #docker container for mongodb
-sleep 181 # time to load containers
+sleep 1 # time to load containers
 
 x="docker cp ./init_mongo.js mongodb:/tmp/init_mongo.js"
 status=$?
@@ -85,13 +87,15 @@ cd ./energies
 
 cd ./gaz
 
-for i in {2011..2023}
+for i in {2021..2023}
   do
     source ./script_mongo_get_gaz.sh $i
     cd ../gaz_industriel
     source ./script_mongo_get_gaz_industriel.sh $i
     cd ../gaz_elec
     source ./script_mongo_get_gaz_elec.sh $i
+    cd ../elec_day
+    source ./script_mongo_get_elec_day.sh $i
     cd ../gaz
   done
 

@@ -1,13 +1,13 @@
 import pandas as pd
 from dash import Dash, dcc, html, Input, Output,dash_table
 import plotly.express as px
-from App.energies.gaz.ProcessSQLGaz import ProcessSQLGaz
 import os
 import sys
-
 absolute_path = os.path.dirname(__file__)
-relative_path="../../"
+relative_path="../../../"
 sys.path.append(os.path.join(absolute_path, relative_path))
+from App.energies.gaz.ProcessSQLGaz import ProcessSQLGaz
+
 # Define a list of French month names
 months_fr = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 # Define a list of French quarter names
