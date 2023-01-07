@@ -1,6 +1,5 @@
 import os
 import sys
-
 absolute_path = os.path.dirname(__file__)
 relative_path="../../"
 sys.path.append(os.path.join(absolute_path, relative_path))
@@ -11,6 +10,8 @@ import plotly.express as px
 from App.energies.gaz.ProcessSQLGaz import ProcessSQLGaz
 from App.energies.gaz_elec.ProcessSQLGazElec import ProcessSQLGazElec
 from App.energies.gaz_industriel.ProcessSQLGazIndustriel import ProcessSQLGazIndustriel
+from App.energies.elec_day.ProcessSQLElecDay import ProcessSQLElecDay
+from App.energies.elec_met.ProcessSQLElecMet import ProcessSQLElecMet
 
 absolute_path = os.path.dirname(__file__)
 relative_path="../../"
@@ -19,6 +20,7 @@ sys.path.append(os.path.join(absolute_path, relative_path))
 months_fr = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 # Define a list of French quarter names
 quarters_fr = ["1er trimestre", "2ème trimestre", "3ème trimestre", "4ème trimestre"]
+mapping_namcol_elec_met={"libelle_metropole":"Métropole","consommation":"Consommation (en MW)","date":"Date","heures":"Horaire"}
 
 def g(i):
     if -1<i and i<10:
@@ -28,6 +30,8 @@ def g(i):
 df_gaz=ProcessSQLGaz().get_sqlserver() #get SQL data from SQL Server
 df_gaz_elec=ProcessSQLGazElec().get_sqlserver() #get SQL data from SQL Server
 df_gaz_industrial=ProcessSQLGazIndustriel().get_sqlserver() #get SQL data from SQL Server
+df_elec_day=ProcessSQLElecDay().get_sqlserver() #get SQL data from SQL Server
+df_elec_met=ProcessSQLElecMet().get_sqlserver() #get SQL data from SQL Server
 
 
 
@@ -35,6 +39,7 @@ df_gaz_industrial=ProcessSQLGazIndustriel().get_sqlserver() #get SQL data from S
 # Initialize the Dash app
 app = Dash(__name__)
 # Define the layout of the app
+
 app.layout =html.Div([
     html.Div([
         html.H1("Consommation de Gaz des ménages en France",style={"color":"#DC143C"}),
@@ -154,6 +159,53 @@ app.layout =html.Div([
 
     ]),
     #fin Gaz_Elec---------------------------------------------------------------------------------------------------------#
+    html.Div([
+        html.H1("Consommation de Gaz pour différents types de clients en France",style={"color":"#DC143C"}),
+        html.Div(
+            dash_table.DataTable(id="table_elec_day",data=df_elec_day.to_dict('records'),columns=[{"name": i, "id": i} for i in df_elec_day.columns]),
+            style={"display":"none"},
+        ),
+        dcc.Interval(
+            id='interval-component_elec_day',
+            interval=600*1000, # in milliseconds
+            n_intervals=0,
+        ),
+        html.Div(children=[
+            dcc.Dropdown(
+                id='period-axis_chart_elec_day',
+                options=["Année","Trimestre","Mois"],
+                value="Mois",
+                clearable=False,
+                style={"width":"50%"},
+            ),
+            dcc.Graph(id="graph_chart_elec_day"),
+        ],style={"display":"block"}
+        ),
+    ],
+    ),
+    #fin Elec_Day---------------------------------------------------------------------------------------------------------#
+    html.Div([
+        html.H1("Tableau de la Consommation d'électricité par métropole en France",style={"color":"#DC143C"}),
+        dcc.Interval(
+            id='interval-component_elec_met',
+            interval=120*1000, # in milliseconds
+            n_intervals=0,
+        ),
+        html.Div([
+            dash_table.DataTable(
+                id='table_elec_met',
+                columns=[{"name": mapping_namcol_elec_met[i], "id": i}
+                         for i in df_elec_met.columns],
+                data=df_elec_met.to_dict('records'),
+                style_cell=dict(textAlign='left'),
+                style_header=dict(backgroundColor="paleturquoise"),
+                style_data=dict(backgroundColor="lavender"),
+                page_size=21,
+            ),
+        ])
+    ],
+    ),
+    #fin Elec_Met---------------------------------------------------------------------------------------------------------#
 ],
 )
 
@@ -341,6 +393,42 @@ def display_graph_chart(hour,period,df_json):
     if period != "Année":
         fig.update_xaxes(tickvals=conv_fr[period][0], ticktext=conv_fr[period][1])
     return fig
+#fin GazIndustrial---------------------------------------------------------------------------------------------------------#
+
+@app.callback(
+    Output("graph_chart_elec_day", "figure"),
+    Input("period-axis_chart_elec_day", "value"),
+    Input("table_elec_day","data"),
+)
+def display_graph_chart(period,df_json):
+    df=pd.DataFrame.from_dict(df_json)
+    # Convert the period to the corresponding column and labels in French
+    conv_fr={"Trimestre":(list(range(1,5)),quarters_fr),"Mois":(list(range(1,13)),months_fr)}
+    period_conv={"Année":"year","Trimestre":"quarter","Mois":"month"}[period]
+    conv_period_dict={value:key for key,value in {"Année":"year","Trimestre":"quarter","Mois":"month"}.items()}
+    # Aggregate the data by the selected period and region group
+    df_agg = df.groupby([period_conv, "categorie"])["value"].mean().reset_index()
+    # Create the bar chart
+    fig = px.bar(df_agg, x=period_conv, y="value", color="categorie",barmode="group",
+                 labels={
+                     "categorie":"Catégorie de client",
+                 }) \
+        .update_layout(
+        title="Diagramme à barres de la consommation journalière d'électricité (en W) moyenne par catégorie client.", \
+        xaxis_title=conv_period_dict[period_conv],yaxis_title="Consommation d'électricité moyenne (en W)")
+    if period != "Année":
+        fig.update_xaxes(tickvals=conv_fr[period][0], ticktext=conv_fr[period][1])
+    return fig
+
+#fin Elec_Day---------------------------------------------------------------------------------------------------------#
+@app.callback(
+    Output("table_elec_met","data"),
+    Input("interval-component_elec_met","n_intervals")
+)
+def update_table(n):
+    return ProcessSQLElecMet().get_sqlserver().to_dict(orient='records')#get SQL data from SQL Server
+
+#fin Elec_Met---------------------------------------------------------------------------------------------------------#
 
 app.run_server(debug=False,host="0.0.0.0",port=8051)
 

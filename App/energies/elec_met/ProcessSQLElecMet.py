@@ -1,10 +1,11 @@
 from App.energies.ProcessSQL import ProcessSQL
 import json
 import pandas as pd
+import re
 
-class ProcessSQLElecDay(ProcessSQL):
+class ProcessSQLElecMet(ProcessSQL):
     def __init__(self,data_json_str=""):
-        super().__init__(table_name="elec_day_energy_tbs",data_json_str=data_json_str)
+        super().__init__(table_name="elec_met_energy_tbs",data_json_str=data_json_str)
 
     def process_data(self):
         #Pre-processing
@@ -24,17 +25,19 @@ class ProcessSQLElecDay(ProcessSQL):
         records={i:dict_i for i,dict_i in enumerate(records)}
         # Convert the list of dictionaries to a pandas DataFrame
         df=pd.read_json(json.dumps(records),orient="index")
-        # Add new columns with the month, day, quarter, and year
-        df["jour"]=pd.to_datetime(df["jour"])
-        df["month"]=df["jour"].dt.month
-        df["day"]=df["jour"].dt.day
-        df["quarter"]=df["jour"].dt.quarter
-        df["year"]=df["jour"].dt.year
+        df =df[["libelle_metropole", "consommation", "date", "heures"]]
+        pattern = re.compile(r"20[0-9]{2}-[0-9]{2}-[0-9]{2}")
+        mask=df["date"].astype(str).apply(lambda x:bool(pattern.fullmatch(x)))
+        df=df.loc[mask]
+        df["date"] = pd.to_datetime(df["date"]).dt.strftime('%d/%m/%Y')
         return df
 
     def get_mask(self,df,df_inserver):
-        return ~(df["categorie"].isin(df_inserver["categorie"])) | ~df["jour"].isin(df_inserver["jour"])
-        #test if duplicates exists
+        return df.index==df.index
+    #the data represent don't have primary key because the electricty
+    #consumption is at metropolis level, so one metropolis can have multiple
+    #rows in the data frame corresponding to each place/city of the metropolis
+    #but the api doesn't identify clearly each city from the metropolis
 
 
 

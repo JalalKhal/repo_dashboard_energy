@@ -57,5 +57,7 @@ def display_line_chart(df_json):
 
 
 # Run the app
-app.run_server(debug=True,port=8055)
+print("Loading..")
+os.system("sleep 5")
+app.run_server(debug=True,port=8053)
 

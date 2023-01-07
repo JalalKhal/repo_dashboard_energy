@@ -169,4 +169,6 @@ def display_graph_hist(hour,df_json):
     return fig
 
 # Run the app
+print("Loading..")
+os.system("sleep 5")
 app.run_server(debug=True,port=8053)
