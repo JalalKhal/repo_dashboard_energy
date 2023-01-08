@@ -21,7 +21,6 @@ class ProcessSQLGazElec(ProcessSQL):
         records=[{feature:value for feature,value in \
                   zip(features,list(dict_rec["fields"].values()))} for dict_rec in records]
         records={i:dict_i for i,dict_i in enumerate(records)}
-        # Convert the list of dictionaries to a pandas DataFrame
         df=pd.read_json(json.dumps(records),orient="index")
         return df
 

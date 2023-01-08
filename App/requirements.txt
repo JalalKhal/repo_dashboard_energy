@@ -5,3 +5,4 @@ pymongo==4.3.3
 SQLAlchemy==1.4.39
 validators==0.20.0
 pyodbc
+regex

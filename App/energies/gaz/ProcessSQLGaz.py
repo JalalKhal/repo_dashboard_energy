@@ -22,7 +22,6 @@ class ProcessSQLGaz(ProcessSQL):
         records=[{feature:value for feature,value in \
                   zip(features,list(dict_rec["fields"].values()))} for dict_rec in records]
         records={i:dict_i for i,dict_i in enumerate(records)}
-        # Convert the list of dictionaries to a pandas DataFrame
         df=pd.read_json(json.dumps(records),orient="index")
         # Drop the mois column and select certain columns
         df=df.drop("mois",axis=1)
@@ -31,7 +30,7 @@ class ProcessSQLGaz(ProcessSQL):
                 ["11_00_00","12_00_00"]+[str(i+1)+"_00" for i in range(12,18)]+["19_00_00"]+[str(i+1)+"_00" for i in range(19,23)]
         df=df[columns]
         df.columns=[col[:5] for col in df.columns]
-        # Rename some of the columns
+        # Rename some columns
         df=df.rename(columns={"regio":"region","opera":"operateur","code_":"code",})
         # Define a mapping from regions to region groups
         groups_region={"Île-de-France":0,"Grand Est":0,"Hauts-de-France":0,"Bourgogne-Franche-Comté":1,"Auvergne-Rhône-Alpes":1, \

@@ -14,6 +14,7 @@ class ProcessSQL:
                                    'Trusted_Connection=no;'
                                    "TrustServerCertificate=yes;")
     engine=create_engine("mssql+pyodbc:///?odbc_connect=%s" % params)
+    #connection to the database created before by docker container with sqlalchemy
     def __init__(self,table_name,data_json_str=""):
         """
         :param data_json_str: json str given by mongoDB queries into mongoDB server,
@@ -39,6 +40,9 @@ class ProcessSQL:
 
 
     def push_sqlserver(self):
+        """
+        push the dataframe given by process_data in SQL Server in the table specified by self.table_name
+        """
         df=self.process_data()
         if not inspect(ProcessSQL.engine).has_table(self.table_name):
             df.to_sql(self.table_name,con=ProcessSQL.engine,if_exists="replace",index=False)
@@ -48,6 +52,9 @@ class ProcessSQL:
                                                                if_exists="append",index=False)
 
     def get_sqlserver(self):
+        """
+        get the dataframe stored in the SQL Server for dash Applications to create dashboards
+        """
         return pd.read_sql(f"SELECT * FROM dbo.{self.table_name}",con=ProcessSQL.engine)
 
 
