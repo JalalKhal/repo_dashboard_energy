@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # ************************************************************
-# This script installs dependencies (librairies,packages...) and sets up a Docker environment with a SQL Server and MongoDB Server in
-#dockers containers.
+# This script installs dependencies (librairies,packages...) and
+# sets up a Docker environment with a SQL Server and MongoDB Server in
+# dockers containers.
 # ***********************************************************
 
 # !!! run script in sudo mode
