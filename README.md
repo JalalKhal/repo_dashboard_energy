@@ -40,6 +40,11 @@ Dash (avec python)
 Librairies python:
 pandas,plotly,pandas,pymongo,SQLAlchemy,validators,pyodbc,regex
 
+## Schema
+Un schéma est disponible pour mieux visualiser l'architecture:
+
+![App Screenshot](documentation/schema/specif_more.png)
+
 ## Virtual Machine
 Une machine virtuelle configurée avec VirtualBox est mise à disposition pour le projet:
 
