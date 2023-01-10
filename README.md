@@ -10,7 +10,7 @@ init.sh installe toutes les dépendances nécessaires pour le projet
 
 ```bash
   chmod +x init.sh
-  ./init.sh
+  sudo ./init.sh
 ```
 
 ## Deployment
@@ -18,7 +18,7 @@ init.sh installe toutes les dépendances nécessaires pour le projet
 Pour déployer le projet:
 Une fois l'infrastructure des données (serveurs MongoDB/SQL Server) créés et initialisés:
 ```bash
-  ./run_app.sh
+  sudo ./run_app.sh
 ```
 une fois run_app exécuté, l'interface web est créée un url pour visualiser les tableaux de bord
 
