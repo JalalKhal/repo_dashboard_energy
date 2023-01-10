@@ -69,6 +69,6 @@ sudo docker start mongodb sqlserver
 
 Il est important de ne PAS lancer le script init.sh, car l'initialisation a déjà été effectuée dans la machine virtuelle.
 
-Lien de la machine:
+Lien de la machine: https://filesender.renater.fr/?s=download&token=baff4084-f4f9-4d53-a0d1-743f73dc00ac
 
 
