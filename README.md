@@ -25,7 +25,9 @@ une fois run_app exécuté, l'interface web est créée un url pour visualiser l
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](documentation/img/dash_lineplt_ex.png)
+![App Screenshot](documentation/img/dash_scatter_ex.png)
+![App Screenshot](documentation/img/dash_tab_ex.png)
 
 
 ## Tech Stack
