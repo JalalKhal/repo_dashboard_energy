@@ -1,0 +1,1 @@
+@daily $(readlink -f "repo_dashboards_ecom")/App/script_cron.sh
