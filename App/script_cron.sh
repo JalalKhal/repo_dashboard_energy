@@ -2,7 +2,7 @@
 year_mnth_day=$(date +%Y-%m-%d)
 year_mnth=$(date +%Y-%m)
 year=$(date +%Y)
-
+cd ./energies
 cd ./gaz
 source ./script_mongo_get_gaz.sh $year_mnth #monthly update date
 
