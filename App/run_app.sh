@@ -1,4 +1,4 @@
-#run the main application: needed to run init.sh before run this script to load/store datas
+#permissions
 chmod +x ./script_cron.sh
 chmod +x get_datas.sh
 chmod +x ./energies/script_cron.sh
@@ -14,6 +14,7 @@ chmod +x ./energies/elec_day/script_push_sql.sh
 chmod +x ./energies/elec_met/script_mongo_get_elec_met.sh
 chmod +x ./energies/elec_met/script_push_sql.sh
 
+#run the main application
 chmod +x ./energies/script_sql.py #script python
 python3 ./energies/dash_main.py
 echo "----- ********* HERE is your App Url  ******************  ----- "
