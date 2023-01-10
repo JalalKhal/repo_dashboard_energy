@@ -66,7 +66,7 @@ docker stop sqlserver mongodb
 docker rm sqlserver mongodb
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Stackover75" -p 1433:1433 --name sqlserver  -d --network host  mcr.microsoft.com/mssql/server:2022-latest #docker container for SQL Server
 docker run -d --name mongodb --network host mongo:latest #docker container for mongodb
-sleep 201 # time to load containers
+sleep 231 # time to load containers
 
 #copy the init_mongo.js script in mongodb docker container (server)
 x="docker cp ./init_mongo.js mongodb:/tmp/init_mongo.js"
