@@ -40,3 +40,11 @@ Dash (avec python)
 Librairies python:
 pandas,plotly,pandas,pymongo,SQLAlchemy,validators,pyodbc,regex
 
+## Virtual Machine
+Une machine virtuelle configurée avec VirtualBox est mise à disposition pour le projet:
+-Il vous suffira de lancer les deux serveurs MongoDB/SQL Server en utilisant la commande : sudo docker start mongodb sqlserver
+-exécuter le script run_app.sh
+Il est important de ne PAS lancer le script init.sh, car l'initialisation a déjà été effectuée dans la machine virtuelle.
+Lien de la machine:
+
+
