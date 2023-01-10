@@ -41,8 +41,15 @@ Librairies python:
 pandas,plotly,pandas,pymongo,SQLAlchemy,validators,pyodbc,regex
 
 ## Schema
-Un schéma est disponible pour mieux visualiser l'architecture:
+Un schéma est disponible pour mieux visualiser l'architecture :
 
+### Générale process
+![App Screenshot](documentation/schema/general_process.png)
+
+### Less specific process
+![App Screenshot](documentation/schema/specif_less.png)
+
+### More specific process
 ![App Screenshot](documentation/schema/specif_more.png)
 
 ## Virtual Machine
