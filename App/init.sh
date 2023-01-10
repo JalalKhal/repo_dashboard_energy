@@ -11,7 +11,6 @@
 chmod +x run_app.sh
 chmod +x ./script_cron.sh
 chmod +x get_datas.sh
-chmod +x ./energies/script_cron.sh
 chmod +x ./energies/script_mongo.sh
 chmod +x ./energies/gaz/script_mongo_get_gaz.sh
 chmod +x ./energies/gaz/script_push_sql.sh
