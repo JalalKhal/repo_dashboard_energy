@@ -13,8 +13,8 @@ chmod +x ./energies/elec_day/script_mongo_get_elec_day.sh
 chmod +x ./energies/elec_day/script_push_sql.sh
 chmod +x ./energies/elec_met/script_mongo_get_elec_met.sh
 chmod +x ./energies/elec_met/script_push_sql.sh
+chmod +x ./energies/script_sql.py #script python
 
 #run the main application
-chmod +x ./energies/script_sql.py #script python
 python3 ./energies/dash_main.py
 echo "----- ********* HERE is your App Url  ******************  ----- "
