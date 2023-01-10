@@ -38,5 +38,5 @@ Dashboards:
 Dash (avec python)
 
 Librairies python:
-pandas,plotly,pandas,plotly,pymongo,SQLAlchemy,validators,pyodbc,regex
+pandas,plotly,pandas,pymongo,SQLAlchemy,validators,pyodbc,regex
 
