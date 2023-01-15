@@ -425,6 +425,7 @@ def display_graph_chart(period,df_json):
     Output("table_elec_met","data"),
     Input("interval-component_elec_met","n_intervals")
 )
+
 def update_table(n):
     return ProcessSQLElecMet().get_sqlserver().to_dict(orient='records')#get SQL data from SQL Server
 
