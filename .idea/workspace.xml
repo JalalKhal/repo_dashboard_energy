@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="258a5ce4-6f0b-41f9-b3fa-25c266ae3038" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cron_tasks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/problematique" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/init.sh" beforeDir="false" afterPath="$PROJECT_DIR$/App/init.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/doc_brouillon/info.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/informations sources.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/informations_sources.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tache_crontab" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +72,8 @@
       <recent name="$PROJECT_DIR$/App/energy_Jelel/gaz" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/App/scripts" />
+      <recent name="$PROJECT_DIR$/documentation" />
       <recent name="$PROJECT_DIR$/App" />
     </key>
   </component>

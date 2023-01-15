@@ -1,0 +1,12 @@
+@monthly /home/khaldi/Documents/repo_dashboards_energies/App/energies/elec_day/script_mongo_get_elec_day.sh
+
+0 0,6,12,18 * * * /home/khaldi/Documents/repo_dashboards_energies/App/energies/elec_met/script_mongo_get_elec_met.sh
+
+@monthly /home/khaldi/Documents/repo_dashboards_energies/App/energies/gaz/script_mongo_get_gaz.sh
+
+@yearly /home/khaldi/Documents/repo_dashboards_energies/App/energies/gaz_elec/script_mongo_get_gaz_elec.sh
+
+@daily /home/khaldi/Documents/repo_dashboards_energies/App/energies/gaz_industriel/script_mongo_get_gaz_industriel.sh
+
+
+
